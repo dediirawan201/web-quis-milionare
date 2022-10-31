@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import './app.css';
 import Soal from './components/Soal';
 
 const App = () => {
   const [questionNumber, setQuestionNumber] = useState(1)
-  const [timeout,setTimeout] = useState(false)
+  const [stop,setStop] = useState(false)
+  const [earned, setEarned] = useState('Rp 0')
   const data = [
     {
       id:1,
@@ -29,9 +30,9 @@ const App = () => {
       ]
     },
     {
-      id:1,
+      id:2,
       pertanyaan:'Apa nama panggilan dari anak nya dedi rifty',
-      answer:[
+      jawabans:[
         {
           text:'naz',
           correct:false
@@ -51,7 +52,8 @@ const App = () => {
       ]
     }
   ]
-  const moneyPyramid = [
+  const moneyPyramid = useMemo(() => 
+  [
     {id:1, amount:'Rp. 50.000'},
     {id:2, amount:'Rp. 100.000'},
     {id:3, amount:'Rp. 500.000'},
@@ -63,19 +65,30 @@ const App = () => {
     {id:9, amount:'Rp. 500.000.000'},
     {id:10, amount:'Rp. 750.000.000'},
     {id:11, amount:'Rp. 1.0000.000.000'},
-  ].reverse()
+  ].reverse(),
+  [])
+
+  useEffect(() => {
+    questionNumber > 1 && 
+      setEarned(moneyPyramid.find(m => m.id === questionNumber - 1).amount)
+  })
   return (
     <div className='app'>
       <div className='main'>
+        {stop ? <h1 className='endText'>You earned: {earned} </h1> : (
+          <>
         <div className='top'>
           <div className='timer'>30</div>
         </div>
-        <div className='bottom'><Soal data={data} questionNumber={questionNumber} setTimeout={setTimeout} setQuestionNumber={setQuestionNumber}/></div>
+        <div className='bottom'><Soal data={data} questionNumber={questionNumber} setStop={setStop} setQuestionNumber={setQuestionNumber}/>
+        </div>
+          </>
+        )}
       </div>
       <div className='pyramid'>
         <ul className='moneyList'>
-          {moneyPyramid.map(m => (
-          <li className={questionNumber === m.id ?'moneyListItem active':'moneyListItem'}>
+          {moneyPyramid.map((m,indek) => (
+          <li key={indek} className={questionNumber === m.id ?'moneyListItem active':'moneyListItem'}>
             <span className='moneyListItemNumber'>{m.id}</span>
             <span className='moneyListItemAmount'>{m.amount}</span>
             </li>
