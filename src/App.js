@@ -4,6 +4,53 @@ import Soal from './components/Soal';
 
 const App = () => {
   const [questionNumber, setQuestionNumber] = useState(1)
+  const [timeout,setTimeout] = useState(false)
+  const data = [
+    {
+      id:1,
+      pertanyaan:'Siapa anak pertama dari dedi rifty?',
+      jawabans:[
+        {
+          text:'Nazra',
+          correct:true
+        },
+        {
+          text:'Miska',
+          correct:false
+        },
+        {
+          text:'Nina',
+          correct:false
+        },
+        {
+          text:'Sinta',
+          correct:false
+        },
+      ]
+    },
+    {
+      id:1,
+      pertanyaan:'Apa nama panggilan dari anak nya dedi rifty',
+      answer:[
+        {
+          text:'naz',
+          correct:false
+        },
+        {
+          text:'najra',
+          correct:false
+        },
+        {
+          text:'rara',
+          correct:true
+        },
+        {
+          text:'nay',
+          correct:false
+        },
+      ]
+    }
+  ]
   const moneyPyramid = [
     {id:1, amount:'Rp. 50.000'},
     {id:2, amount:'Rp. 100.000'},
@@ -23,7 +70,7 @@ const App = () => {
         <div className='top'>
           <div className='timer'>30</div>
         </div>
-        <div className='bottom'><Soal/></div>
+        <div className='bottom'><Soal data={data} questionNumber={questionNumber} setTimeout={setTimeout} setQuestionNumber={setQuestionNumber}/></div>
       </div>
       <div className='pyramid'>
         <ul className='moneyList'>
