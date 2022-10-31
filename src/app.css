@@ -163,3 +163,35 @@
     right: 0;
     margin: auto;
 }
+
+.start{
+    background: #020230;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.startInput{
+    margin-bottom: 10px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.startInput:focus{
+    outline: none;
+}
+
+.startButton{
+    width: 17%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+}

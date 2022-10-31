@@ -2,8 +2,10 @@ import React, { useEffect, useMemo, useState } from "react";
 import "./app.css";
 import Soal from "./components/Soal";
 import Timer from "./components/Timer";
+import Start from "./components/Start";
 
 const App = () => {
+  const [userName,setUserName] = useState(null)
   const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
   const [earned, setEarned] = useState("Rp 0");
@@ -77,7 +79,9 @@ const App = () => {
   });
   return (
     <div className="app">
-      <div className="main">
+      {userName ? (
+        <>
+        <div className="main">
         {stop ? (
           <h1 className="endText">You earned: {earned} </h1>
         ) : (
@@ -115,6 +119,9 @@ const App = () => {
           ))}
         </ul>
       </div>
+        </>
+      ) : <Start setUserName={setUserName}/>}
+      
     </div>
   );
 };
