@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './app.css';
+import Soal from './components/Soal';
 
 const App = () => {
+  const [questionNumber, setQuestionNumber] = useState(1)
   const moneyPyramid = [
     {id:1, amount:'Rp. 50.000'},
     {id:2, amount:'Rp. 100.000'},
@@ -17,11 +19,16 @@ const App = () => {
   ].reverse()
   return (
     <div className='app'>
-      <div className='main'>main</div>
+      <div className='main'>
+        <div className='top'>
+          <div className='timer'>30</div>
+        </div>
+        <div className='bottom'><Soal/></div>
+      </div>
       <div className='pyramid'>
         <ul className='moneyList'>
           {moneyPyramid.map(m => (
-          <li className='moneyListItem '>
+          <li className={questionNumber === m.id ?'moneyListItem active':'moneyListItem'}>
             <span className='moneyListItemNumber'>{m.id}</span>
             <span className='moneyListItemAmount'>{m.amount}</span>
             </li>
