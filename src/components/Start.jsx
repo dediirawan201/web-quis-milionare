@@ -9,7 +9,7 @@ const Start = ({setUserName}) => {
   return (
     <div className='start'>
         <input ref={inputRef} placeholder='masukan nama' className='startInput'/>
-        <button onClick={handleClick} className='startButton'>Start</button>
+        <button onClick={handleClick} className='startButton'>Mulai</button>
     </div>
   )
 }

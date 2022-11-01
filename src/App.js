@@ -83,7 +83,7 @@ const App = () => {
         <>
         <div className="main">
         {stop ? (
-          <h1 className="endText">You earned: {earned} </h1>
+          <h1 className="endText">Anda Mendapatkan: {earned} </h1>
         ) : (
           <>
             <div className="top">
