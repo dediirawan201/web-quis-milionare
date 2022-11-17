@@ -6,7 +6,7 @@ import correct from '../sounds/correct.mp3'
 import wait from '../sounds/wait.mp3'
 import wrong from '../sounds/wrong.mp3'
 
-const Soal = ({data,questionNumber,setQuestionNumber,setStop}) => {
+const Soal = ({data,questionNumber,setQuestionNumber,setStop,setNavOpen,navOpen}) => {
     const [question, setQuestion] = useState(null)
     const [selectedAnswer,setSelectedAnswer] = useState(null)
     const [classNama,setClassName] = useState('jawaban')
@@ -21,6 +21,7 @@ const Soal = ({data,questionNumber,setQuestionNumber,setStop}) => {
 
     useEffect(() => {
         setQuestion(data[questionNumber - 1])
+        
     },[data,questionNumber])
     
     const delay = (durasi, callback) => {
@@ -38,14 +39,16 @@ const Soal = ({data,questionNumber,setQuestionNumber,setStop}) => {
                 delay(1000, () => {
                     setQuestionNumber((prev) => prev + 1)
                     setSelectedAnswer(null)
+                    setNavOpen(!navOpen)
                 })
+
             } else{
                 wrongAnswer()
                 delay(1000, () => {
                     setStop(true)
                 })
             }
-        })
+        }) 
     }
   return (
     <div className="soal">

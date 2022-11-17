@@ -195,3 +195,121 @@
     font-size: 18px;
     font-weight: 500;
 }
+
+/* //mode hp  */
+
+@media(max-width:500px) {
+    .main{
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0), #020230 ), url("./assets/bg.jpg") center;
+        display: flex;
+        flex-direction: column;
+    }
+    .pyramid{
+        position:absolute;
+        right: 0;
+        top: 30px;
+        /* transition: all 1s ease; */
+        
+    }
+
+    .pyramid.active{
+        background-color: blue;
+    }
+
+    .pyramid.active .hamburger .line1{
+        background-color: white;
+        transform: rotate(45deg);
+    }
+    .pyramid.active .hamburger .line2{
+        opacity: 0;
+    }
+
+    .pyramid.active .hamburger .line3{
+        background-color: white;
+        transform: rotate(-45deg);
+    }
+
+    .hamburger{
+        width: 32px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        position: absolute;
+        z-index: 99;
+    }
+
+    .line1,.line2,.line3{
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        transform-origin: left;
+        transition: all 2s ease;
+    }
+
+    .menuListMoney{
+        width: 150px;
+        height: 100vh;
+        background-color:#020230;
+        position: fixed;
+        top: 0;
+        right: -150px;
+        z-index: -2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 2s ease;
+    }
+
+    .menuListMoney.active{
+        right: 0;
+        z-index: -1;
+    }
+    
+    .moneyList{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        background-color: linear-gradient(#0e0124, #22074d);
+        display: flex;
+        justify-content:center;
+        flex-direction: column;
+        /* align-items: center;  */
+    }
+    .moneyListItem{
+        display: flex;
+        padding: 10px;
+        /* justify-content:center; */
+    }
+    
+    .moneyListItem.active{
+        background-color: teal;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .moneyListItemNumber{
+        font-size: 10px;
+        font-weight: 100;
+        text-align: center;
+        /* background-color: red; */
+    }
+    
+    .moneyListItemAmount{
+        font-size: 10px;
+        font-weight: 300;
+    }
+    .endText{
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: 25px;
+    }
+}

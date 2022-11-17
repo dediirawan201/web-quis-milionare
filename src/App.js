@@ -9,6 +9,7 @@ const App = () => {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
   const [earned, setEarned] = useState("Rp 0");
+  const [navOpen, setNavOpen] = useState(false)
   const data = [
     {
       id: 1,
@@ -97,12 +98,19 @@ const App = () => {
                 questionNumber={questionNumber}
                 setStop={setStop}
                 setQuestionNumber={setQuestionNumber}
+                setNavOpen={setNavOpen}
+                navOpen={navOpen}
               />
             </div>
           </>
         )}
       </div>
-      <div className="pyramid">
+      <div className={"pyramid " + (navOpen && 'active')}>
+        <div className="hamburger" onClick={() => setNavOpen(!navOpen)}>
+          <span className="line1"></span>
+          <span className="line2"></span>
+          <span className="line3"></span>
+          <div className={"menuListMoney " + (navOpen && 'active')}>
         <ul className="moneyList">
           {moneyPyramid.map((m, indek) => (
             <li
@@ -118,11 +126,14 @@ const App = () => {
             </li>
           ))}
         </ul>
+        </div>
+      </div>
       </div>
         </>
       ) : <Start setUserName={setUserName}/>}
       
     </div>
+    
   );
 };
 
