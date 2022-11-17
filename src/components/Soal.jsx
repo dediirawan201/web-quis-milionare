@@ -3,7 +3,6 @@ import { useState } from "react"
 import useSound from "use-sound"
 import play from "../sounds/play.mp3"
 import correct from '../sounds/correct.mp3'
-import wait from '../sounds/wait.mp3'
 import wrong from '../sounds/wrong.mp3'
 
 const Soal = ({data,questionNumber,setQuestionNumber,setStop,setNavOpen,navOpen}) => {
@@ -32,15 +31,18 @@ const Soal = ({data,questionNumber,setQuestionNumber,setStop,setNavOpen,navOpen}
     const handleClick = (a) => {
         setSelectedAnswer(a)
         setClassName('jawaban active')
-        delay(3000, () => setClassName(a.correct ? 'jawaban correct' : 'jawaban wrong'))
+        delay(1000, () => setClassName(a.correct ? 'jawaban correct' : 'jawaban wrong'))
         delay(5000, () => {
             if(a.correct){
                 correctAnswer()
                 delay(1000, () => {
+                    setClassName('jawaban')
+                })
+                delay(2000, () => {
                     setQuestionNumber((prev) => prev + 1)
-                    // setClassName('')
                     setSelectedAnswer(null)
                     setNavOpen(!navOpen)
+                    
                 })
 
             } else{
@@ -51,7 +53,12 @@ const Soal = ({data,questionNumber,setQuestionNumber,setStop,setNavOpen,navOpen}
             }
         })
 
-        delay(10000, () => setNavOpen(a.correct ? false : true))
+        // delay(10000, () => {
+        //     setNavOpen(a.correct ? false : true)
+            
+        // })
+
+        // setClassName('jawaban')
             
     }
   return (
@@ -63,7 +70,7 @@ const Soal = ({data,questionNumber,setQuestionNumber,setStop,setNavOpen,navOpen}
                 <div key={indek} className={selectedAnswer === a ? classNama : 'jawaban'} onClick={() => handleClick(a)}>{a.text}</div>
             ))}
         </div>
-    </div>
+    </div> 
   )
 }
 

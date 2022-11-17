@@ -205,6 +205,27 @@
         display: flex;
         flex-direction: column;
     }
+
+    .top{
+        height: 50%;
+        position: relative;
+    }
+    
+    .timer{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 5px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-weight: 700;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+    }
+
     .pyramid{
         position:absolute;
         right: 0;
@@ -313,22 +334,50 @@
         font-size: 25px;
     }
 
+    .soal{
+        height: 100%;
+        display: flex;
+        margin-top: -40px;
+        flex-direction: column;
+        justify-content:space-around;
+        align-items:center;
+    }
+
+    .jawabans{
+        /* width: 400px; */
+        /* display: flex; */
+        /* justify-content: center; */
+        /* flex-wrap: wrap; */
+        margin-top: 20px;
+    }
+
+    .pertanyaan{
+        width: 80%;
+        background:linear-gradient(#100241, black);
+        border: 2px solid white;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+    
     .jawaban{
-        width: 40%;
+        width: 85%;
         padding: 10px;
         text-align: center;
         background: linear-gradient(#0e0124, #22074d);
         border: 1px solid white;
-        border-radius: 15px;
-        font-size: 20px;
+        border-radius: 10px;
+        font-size: 14px;
         font-weight: 300;
-        margin: 0 10px 20px 10px;
+        margin-top: -10px;
         cursor: pointer;
     }
     
+    
     .jawaban:hover,
     .jawaban.active{
-        background: rgb(199, 244, 34);
+        background: mediumblue;
     }
     
     .jawaban.correct{
@@ -344,32 +393,13 @@
         20%,
         40%,
         60% {
-            background: linear-gradient(#0e0124, #0da71a);
+            background: linear-gradient(#0e0124, #22074d);
         }
         62%,
         100%{
             background: green;
         }
     }
+
     
-    .jawaban.wrong{
-        animation: wrong 3s ease forwards;
-    }
-    
-    @keyframes wrong {
-        0%,
-        22%,
-        42% {
-            background: mediumblue;
-        }
-        20%,
-        40%,
-        60% {
-            background: linear-gradient(#0e0124, #22074d);
-        }
-        62%,
-        100%{
-            background: crimson;
-        }
-    }
 }
