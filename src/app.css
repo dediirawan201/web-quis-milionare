@@ -312,4 +312,64 @@
         margin: auto;
         font-size: 25px;
     }
+
+    .jawaban{
+        width: 40%;
+        padding: 10px;
+        text-align: center;
+        background: linear-gradient(#0e0124, #22074d);
+        border: 1px solid white;
+        border-radius: 15px;
+        font-size: 20px;
+        font-weight: 300;
+        margin: 0 10px 20px 10px;
+        cursor: pointer;
+    }
+    
+    .jawaban:hover,
+    .jawaban.active{
+        background: rgb(199, 244, 34);
+    }
+    
+    .jawaban.correct{
+        animation: correct 3s ease forwards;
+    }
+    
+    @keyframes correct {
+        0%,
+        22%,
+        42% {
+            background: mediumblue;
+        }
+        20%,
+        40%,
+        60% {
+            background: linear-gradient(#0e0124, #0da71a);
+        }
+        62%,
+        100%{
+            background: green;
+        }
+    }
+    
+    .jawaban.wrong{
+        animation: wrong 3s ease forwards;
+    }
+    
+    @keyframes wrong {
+        0%,
+        22%,
+        42% {
+            background: mediumblue;
+        }
+        20%,
+        40%,
+        60% {
+            background: linear-gradient(#0e0124, #22074d);
+        }
+        62%,
+        100%{
+            background: crimson;
+        }
+    }
 }

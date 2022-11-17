@@ -38,6 +38,7 @@ const Soal = ({data,questionNumber,setQuestionNumber,setStop,setNavOpen,navOpen}
                 correctAnswer()
                 delay(1000, () => {
                     setQuestionNumber((prev) => prev + 1)
+                    // setClassName('')
                     setSelectedAnswer(null)
                     setNavOpen(!navOpen)
                 })
@@ -48,7 +49,10 @@ const Soal = ({data,questionNumber,setQuestionNumber,setStop,setNavOpen,navOpen}
                     setStop(true)
                 })
             }
-        }) 
+        })
+
+        delay(10000, () => setNavOpen(a.correct ? false : true))
+            
     }
   return (
     <div className="soal">
