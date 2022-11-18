@@ -267,22 +267,22 @@
         height: 3px;
         background-color: white;
         transform-origin: left;
-        transition: all 2s ease;
+        transition: all 1s ease;
     }
 
     .menuListMoney{
-        width: 150px;
+        width: 100vw;
         height: 100vh;
         background-color:#020230;
         position: fixed;
         top: 0;
-        right: -150px;
+        right: -100vw;
         z-index: -2;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transition: all 2s ease;
+        /* transition: all 1s ease; */
     }
 
     .menuListMoney.active{
@@ -299,12 +299,13 @@
         display: flex;
         justify-content:center;
         flex-direction: column;
+        margin-top: 40px;
         /* align-items: center;  */
     }
     .moneyListItem{
         display: flex;
         padding: 10px;
-        /* justify-content:center; */
+        text-align: center;
     }
     
     .moneyListItem.active{
@@ -314,14 +315,15 @@
     }
     
     .moneyListItemNumber{
-        font-size: 10px;
+        font-size: 15px;
         font-weight: 100;
         text-align: center;
-        /* background-color: red; */
+        margin-left: 60px;
     }
     
     .moneyListItemAmount{
-        font-size: 10px;
+        margin-left: -30px;
+        font-size: 15px;
         font-weight: 300;
     }
     .endText{

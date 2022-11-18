@@ -35,22 +35,220 @@ const App = () => {
     },
     {
       id: 2,
-      pertanyaan: "Apa nama panggilan dari anak nya dedi rifty",
+      pertanyaan: "Berapa Jumlah Cucu Aki dan Uwan?",
       jawabans: [
         {
-          text: "naz",
+          text: "20",
           correct: false,
         },
         {
-          text: "najra",
+          text: "7",
           correct: false,
         },
         {
-          text: "rara",
+          text: "11",
           correct: true,
         },
         {
-          text: "nay",
+          text: "12",
+          correct: true,
+        },
+      ],
+    },
+    {
+      id: 3,
+      pertanyaan: 'Tanggal berapa pernikahan kak along rifa dan bang long arifin?',
+      jawabans: [
+        {
+          text: "20 Desember 2008",
+          correct: false,
+        },
+        {
+          text: "1 maret 2008",
+          correct: true,
+        },
+        {
+          text: "2 september 2019",
+          correct: false,
+        },
+        {
+          text: "03 februari 2010",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 4,
+      pertanyaan: 'Siapa cucu ke tiga dari aki erlian dan uwan mulina?',
+      jawabans: [
+        {
+          text: "Nazra",
+          correct: false,
+        },
+        {
+          text: "Messi",
+          correct: true,
+        },
+        {
+          text: "Saza",
+          correct: false,
+        },
+        {
+          text: "Aiza",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 5,
+      pertanyaan: 'Tanggal Berapakah Ayah dilahirkan?',
+      jawabans: [
+        {
+          text: "19 November 1999",
+          correct: false,
+        },
+        {
+          text: "01 Januari 1968",
+          correct: true,
+        },
+        {
+          text: "19 Maret 1968",
+          correct: false,
+        },
+        {
+          text: "17 September 1957",
+          correct: true,
+        },
+      ],
+    },
+    {
+      id: 6,
+      pertanyaan: 'Hari apakah kak ngah Mela lahir kedunia?',
+      jawabans: [
+        {
+          text: "Kamis",
+          correct: false,
+        },
+        {
+          text: "Jum'at",
+          correct: true,
+        },
+        {
+          text: "Sabtu",
+          correct: false,
+        },
+        {
+          text: "Ahad",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 7,
+      pertanyaan: 'Hal apa yang tidak disukai mamak?',
+      jawabans: [
+        {
+          text: "Dapat uang 1 Milyar",
+          correct: false,
+        },
+        {
+          text: "Ketemu cucunya",
+          correct: true,
+        },
+        {
+          text: "makan bubur diaduk",
+          correct: false,
+        },
+        {
+          text: "Berlambat-lambat ria",
+          correct: true,
+        },
+      ],
+    },
+    {
+      id: 8,
+      pertanyaan: 'Berapa Harga Es batu yang dijual ayah ke bang feri?',
+      jawabans: [
+        {
+          text: "2500",
+          correct: false,
+        },
+        {
+          text: "1500",
+          correct: true,
+        },
+        {
+          text: "2000",
+          correct: false,
+        },
+        {
+          text: "1000",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 9,
+      pertanyaan: 'Apa ledekan panggilan nining waktu kecil?',
+      jawabans: [
+        {
+          text: "si china",
+          correct: false,
+        },
+        {
+          text: "Anak Pungut",
+          correct: false,
+        },
+        {
+          text: "Nungging",
+          correct: true,
+        },
+        {
+          text: "sipit",
+          correct: true,
+        },
+      ],
+    },
+    {
+      id: 10,
+      pertanyaan: 'Apa pesan yang diberikan ayah kepada anak-anaknya?',
+      jawabans: [
+        {
+          text: "Taatlah kepada suami, selama dia taat kepada Allah swt",
+          correct: true,
+        },
+        {
+          text: "Sopan santunlah ketika kamu berada",
+          correct: false,
+        },
+        {
+          text: "Jadilah anak yang sukses dan berguna",
+          correct: false,
+        },
+        {
+          text: "Berfikirlah sebelum bertindak",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 11,
+      pertanyaan: 'Siapakah Menantu yang paling tampan?',
+      jawabans: [
+        {
+          text: "Ahmad Arifin",
+          correct: false,
+        },
+        {
+          text: "Abdul Basit",
+          correct: false,
+        },
+        {
+          text: "Yusuf",
+          correct: false,
+        },
+        {
+          text: "Abdul Malik",
           correct: false,
         },
       ],

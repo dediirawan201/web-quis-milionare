@@ -32,16 +32,13 @@ const Soal = ({data,questionNumber,setQuestionNumber,setStop,setNavOpen,navOpen}
         setSelectedAnswer(a)
         setClassName('jawaban active')
         delay(1000, () => setClassName(a.correct ? 'jawaban correct' : 'jawaban wrong'))
-        delay(5000, () => {
+        delay(3000, () => {
             if(a.correct){
                 correctAnswer()
                 delay(1000, () => {
-                    setClassName('jawaban')
-                })
-                delay(2000, () => {
+                    setNavOpen(!navOpen)
                     setQuestionNumber((prev) => prev + 1)
                     setSelectedAnswer(null)
-                    setNavOpen(!navOpen)
                     
                 })
 
