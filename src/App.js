@@ -262,7 +262,7 @@ const App = () => {
         { id: 3, amount: "Rp. 500.000" },
         { id: 4, amount: "Rp. 1.000.000" },
         { id: 5, amount: "Rp. 5.000.000" },
-        { id: 6, amount: "Rp. 5.000.000" },
+        { id: 6, amount: "Rp. 10.000.000" },
         { id: 7, amount: "Rp. 15.000.000" },
         { id: 8, amount: "Rp. 30.000.000" },
         { id: 9, amount: "Rp. 100.000.000" },
